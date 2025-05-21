@@ -1,0 +1,50 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+header {
+  background-color: navy;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.highlight {
+  background-color: #ffffe0;
+  border-left: 5px solid gold;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.css-highlight {
+  color: brown;
+}
+
+.border-box {
+  background-color: lightgreen;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: lightblue;
+}
+
+h2 {
+  margin-top: 30px;
+}
