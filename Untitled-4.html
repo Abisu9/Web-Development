@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicle Age Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .vehicle-box {
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2d3436;
+    }
+
+    .vehicle {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="vehicle-box" id="vehicle-info">
+    <h2>Vehicle Info & Age</h2>
+    <!-- Vehicle info will go here -->
+  </div>
+
+  <script>
+    // Step 1: Create constructor function Vehicle
+    function Vehicle(brand, model, year) {
+      this.brand = brand;
+      this.model = model;
+      this.year = year;
+    }
+
+    // Step 2: Add prototype method getAge()
+    Vehicle.prototype.getAge = function () {
+      const currentYear = new Date().getFullYear();
+      return currentYear - this.year;
+    };
+
+    // Step 3: Create two vehicle objects
+    const vehicle1 = new Vehicle("Toyota", "Corolla", 2018);
+    const vehicle2 = new Vehicle("Tesla", "Model 3", 2021);
+
+    // Display vehicle details and age
+    const vehicleInfo = document.getElementById("vehicle-info");
+
+    function displayVehicle(vehicle) {
+      vehicleInfo.innerHTML += `
+        <div class="vehicle">
+          <p><strong>Brand:</strong> ${vehicle.brand}</p>
+          <p><strong>Model:</strong> ${vehicle.model}</p>
+          <p><strong>Year:</strong> ${vehicle.year}</p>
+          <p><strong>Age:</strong> ${vehicle.getAge()} year(s)</p>
+        </div>
+      `;
+    }
+
+    displayVehicle(vehicle1);
+    displayVehicle(vehicle2);
+  </script>
+
+</body>
+</html>

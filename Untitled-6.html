@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Check JavaScript in Sentence</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #2d89ef;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1b5fad;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>JavaScript Word Checker</h2>
+    <input type="text" id="sentenceInput" placeholder="Type a sentence here..." />
+    <button onclick="checkJavaScript()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkJavaScript() {
+      const sentence = document.getElementById('sentenceInput').value;
+      const regex = /JavaScript/i;
+      const resultDiv = document.getElementById('result');
+      
+      if (regex.test(sentence)) {
+        resultDiv.textContent = '✅ The sentence contains the word "JavaScript".';
+        resultDiv.style.color = 'green';
+      } else {
+        resultDiv.textContent = '❌ The sentence does NOT contain the word "JavaScript".';
+        resultDiv.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>

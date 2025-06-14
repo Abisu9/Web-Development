@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>10-digit Phone Number Validator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #2d89ef;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1b5fad;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Phone Number Validator</h2>
+    <input type="text" id="phoneInput" placeholder="Enter 10-digit phone number" maxlength="10" />
+    <button onclick="validatePhone()">Validate</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById('phoneInput').value.trim();
+      // Regex: exactly 10 digits (0-9)
+      const regex = /^\d{10}$/;
+
+      const resultDiv = document.getElementById('result');
+      if (regex.test(phone)) {
+        resultDiv.textContent = '✅ Valid 10-digit phone number.';
+        resultDiv.style.color = 'green';
+      } else {
+        resultDiv.textContent = '❌ Invalid phone number. Must be exactly 10 digits.';
+        resultDiv.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .student-card {
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #34495e;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+      color: #2d3436;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="student-card" id="student-info">
+    <!-- Student details will be inserted here -->
+  </div>
+
+  <script>
+    // Step 1: Create the student object using new Object()
+    const student = new Object();
+
+    // Step 2: Add properties
+    student.name = "Sagar Thapa";
+    student.age = 16;
+    student.subjects = [];
+
+    // Step 3: Add addSubject method
+    student.addSubject = function(subjectName) {
+      this.subjects.push(subjectName);
+    };
+
+    // Step 4: Add at least two subjects
+    student.addSubject("Mathematics");
+    student.addSubject("Science");
+
+    // Step 5: Display student details on the webpage
+    const studentInfo = document.getElementById("student-info");
+
+    studentInfo.innerHTML = `
+      <h2>Student Name: ${student.name}</h2>
+      <p>Age: ${student.age}</p>
+      <p>Subjects:</p>
+      <ul>
+        ${student.subjects.map(subject => `<li>${subject}</li>`).join("")}
+      </ul>
+    `;
+  </script>
+
+</body>
+</html>
